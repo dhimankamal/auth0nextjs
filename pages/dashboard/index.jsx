@@ -6,10 +6,9 @@ import serviceslist from '../../utils/servicesList';
 const Dashboard = () => {
   return (
     <>
-    {
-        serviceslist.map((list,key)=><Services key={key} {...list} /> )
-    }
-      
+      {serviceslist.map((list, key) => (
+        <Services key={key} {...list} />
+      ))}
     </>
   );
 };
