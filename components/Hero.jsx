@@ -1,19 +1,30 @@
 import React from 'react';
+import { useUser } from '@auth0/nextjs-auth0';
 
-import Logo from './Logo';
+const Hero = () => {
+  const { user } = useUser();
 
-const Hero = () => (
-  <div className="hero my-5 text-center" data-testid="hero">
-    <Logo testId="hero-logo" />
-    <h1 className="mb-4" data-testid="hero-title">
-      Next.js Sample Project
-    </h1>
-
-    <p className="lead" data-testid="hero-lead">
-      This is a sample application that demonstrates an authentication flow for a Regular Web App, using{' '}
-      <a href="https://nextjs.org">Next.js</a>
-    </p>
-  </div>
-);
+  return (
+    <div className="hero my-5 text-center" data-testid="hero">
+      <h1 className="mb-4" data-testid="hero-title">
+        Welcome to Online Form
+      </h1>
+      {!user && (
+        <div id="qsLoginBtn">
+          <a href="/api/auth/login" className="btn btn-primary btn-margin" tabIndex={0} testId="navbar-login-desktop">
+            Log in
+          </a>
+        </div>
+      )}
+      {user && (
+        <div id="qsLoginBtn">
+          <a href="/dashboard" className="btn btn-primary btn-margin" tabIndex={0} testId="navbar-login-desktop">
+            Go to dashboard
+          </a>
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default Hero;

@@ -30,30 +30,32 @@ const NavBar = () => {
           <NavbarToggler onClick={toggle} data-testid="navbar-toggle" />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar data-testid="navbar-items">
-              <NavItem>
-                <PageLink href="/" className="nav-link" testId="navbar-home">
-                  Home
-                </PageLink>
-              </NavItem>
+              {!user && (
+                <NavItem>
+                  <PageLink href="/" className="nav-link" testId="navbar-home">
+                    Home
+                  </PageLink>
+                </NavItem>
+              )}
               {user && (
                 <>
                   <NavItem>
-                    <PageLink href="/csr" className="nav-link" testId="navbar-csr">
-                      Client-side rendered page
+                    <PageLink href="/dashboard" className="nav-link" testId="navbar-csr">
+                      Dashboard
                     </PageLink>
                   </NavItem>
                   <NavItem>
-                    <PageLink href="/ssr" className="nav-link" testId="navbar-ssr">
-                      Server-side rendered page
-                    </PageLink>
-                  </NavItem>
-                  <NavItem>
-                    <PageLink href="/external" className="nav-link" testId="navbar-external">
-                      External API
+                    <PageLink href="/dashboard/profile" className="nav-link" testId="navbar-ssr">
+                      Profile
                     </PageLink>
                   </NavItem>
                 </>
               )}
+              <NavItem>
+                <PageLink href="/about" className="nav-link" testId="navbar-external">
+                  About
+                </PageLink>
+              </NavItem>
             </Nav>
             <Nav className="d-none d-md-block" navbar>
               {!isLoading && !user && (
@@ -85,7 +87,7 @@ const NavBar = () => {
                       {user.name}
                     </DropdownItem>
                     <DropdownItem className="dropdown-profile" tag="span">
-                      <PageLink href="/profile" icon="user" testId="navbar-profile-desktop">
+                      <PageLink href="/dashboard/profile" icon="user" testId="navbar-profile-desktop">
                         Profile
                       </PageLink>
                     </DropdownItem>

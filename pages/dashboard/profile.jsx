@@ -1,14 +1,13 @@
 import React from 'react';
-import { Row, Col } from 'reactstrap';
+import { Row, Col, ListGroup, ListGroupItem } from 'reactstrap';
 import { useUser, withPageAuthRequired } from '@auth0/nextjs-auth0';
 
-import Loading from '../components/Loading';
-import ErrorMessage from '../components/ErrorMessage';
-import Highlight from '../components/Highlight';
+import Loading from '../../components/Loading';
+import ErrorMessage from '../../components/ErrorMessage';
 
-function Profile() {
+const Profile = () => {
   const { user, isLoading } = useUser();
-
+  console.log(user);
   return (
     <>
       {isLoading && <Loading />}
@@ -32,13 +31,18 @@ function Profile() {
             </Col>
           </Row>
           <Row data-testid="profile-json">
-            <Highlight>{JSON.stringify(user, null, 2)}</Highlight>
+            <ListGroup>
+              <ListGroupItem>Name - {user.name}</ListGroupItem>
+              <ListGroupItem>Nickname - {user.nickname}</ListGroupItem>
+              <ListGroupItem>User id - {user.sub}</ListGroupItem>
+              <ListGroupItem>Last updated - {user.updated_at}</ListGroupItem>
+            </ListGroup>
           </Row>
         </>
       )}
     </>
   );
-}
+};
 
 export default withPageAuthRequired(Profile, {
   onRedirecting: () => <Loading />,
