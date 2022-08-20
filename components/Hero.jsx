@@ -11,14 +11,14 @@ const Hero = () => {
       </h1>
       {!user && (
         <div id="qsLoginBtn">
-          <a href="/api/auth/login" className="btn btn-primary btn-margin" tabIndex={0} testId="navbar-login-desktop">
+          <a href="/api/auth/login" className="btn btn-primary btn-margin" tabIndex={0} testid="navbar-login-desktop">
             Log in
           </a>
         </div>
       )}
       {user && (
         <div id="qsLoginBtn">
-          <a href="/dashboard" className="btn btn-primary btn-margin" tabIndex={0} testId="navbar-login-desktop">
+          <a href="/dashboard" className="btn btn-primary btn-margin" tabIndex={0} testid="navbar-login-desktop">
             Go to dashboard
           </a>
         </div>

@@ -2,10 +2,10 @@ import React from 'react';
 
 import NavBarItem from './NavBarItem';
 
-const AnchorLink = ({ children, href, className, icon, tabIndex, testId }) => {
+const AnchorLink = ({ children, href, className, icon, tabIndex, testid }) => {
   return (
     <a href={href}>
-      <NavBarItem href={href} className={className} icon={icon} tabIndex={tabIndex} testId={testId}>
+      <NavBarItem href={href} className={className} icon={icon} tabIndex={tabIndex} testid={testid}>
         {children}
       </NavBarItem>
     </a>

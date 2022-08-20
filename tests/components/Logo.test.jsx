@@ -5,7 +5,7 @@ import Logo from '../../components/Logo';
 
 describe('Logo', () => {
   it('should render without crashing', async () => {
-    render(<Logo testId="logo" />);
+    render(<Logo testid="logo" />);
 
     expect(screen.getByTestId('logo')).toBeInTheDocument();
   });

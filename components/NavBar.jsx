@@ -32,7 +32,7 @@ const NavBar = () => {
             <Nav className="mr-auto" navbar data-testid="navbar-items">
               {!user && (
                 <NavItem>
-                  <PageLink href="/" className="nav-link" testId="navbar-home">
+                  <PageLink href="/" className="nav-link" testid="navbar-home">
                     Home
                   </PageLink>
                 </NavItem>
@@ -40,19 +40,19 @@ const NavBar = () => {
               {user && (
                 <>
                   <NavItem>
-                    <PageLink href="/dashboard" className="nav-link" testId="navbar-csr">
+                    <PageLink href="/dashboard" className="nav-link" testid="navbar-csr">
                       Dashboard
                     </PageLink>
                   </NavItem>
                   <NavItem>
-                    <PageLink href="/dashboard/profile" className="nav-link" testId="navbar-ssr">
+                    <PageLink href="/dashboard/profile" className="nav-link" testid="navbar-ssr">
                       Profile
                     </PageLink>
                   </NavItem>
                 </>
               )}
               <NavItem>
-                <PageLink href="/about" className="nav-link" testId="navbar-external">
+                <PageLink href="/about" className="nav-link" testid="navbar-external">
                   About
                 </PageLink>
               </NavItem>
@@ -64,7 +64,7 @@ const NavBar = () => {
                     href="/api/auth/login"
                     className="btn btn-primary btn-margin"
                     tabIndex={0}
-                    testId="navbar-login-desktop">
+                    testid="navbar-login-desktop">
                     Log in
                   </AnchorLink>
                 </NavItem>
@@ -87,12 +87,12 @@ const NavBar = () => {
                       {user.name}
                     </DropdownItem>
                     <DropdownItem className="dropdown-profile" tag="span">
-                      <PageLink href="/dashboard/profile" icon="user" testId="navbar-profile-desktop">
+                      <PageLink href="/dashboard/profile" icon="user" testid="navbar-profile-desktop">
                         Profile
                       </PageLink>
                     </DropdownItem>
                     <DropdownItem id="qsLogoutBtn">
-                      <AnchorLink href="/api/auth/logout" icon="power-off" testId="navbar-logout-desktop">
+                      <AnchorLink href="/api/auth/logout" icon="power-off" testid="navbar-logout-desktop">
                         Log out
                       </AnchorLink>
                     </DropdownItem>
@@ -106,7 +106,7 @@ const NavBar = () => {
                   href="/api/auth/login"
                   className="btn btn-primary btn-block"
                   tabIndex={0}
-                  testId="navbar-login-mobile">
+                  testid="navbar-login-mobile">
                   Log in
                 </AnchorLink>
               </Nav>
@@ -134,7 +134,7 @@ const NavBar = () => {
                   </span>
                 </NavItem>
                 <NavItem>
-                  <PageLink href="/profile" icon="user" testId="navbar-profile-mobile">
+                  <PageLink href="/profile" icon="user" testid="navbar-profile-mobile">
                     Profile
                   </PageLink>
                 </NavItem>
@@ -143,7 +143,7 @@ const NavBar = () => {
                     href="/api/auth/logout"
                     className="btn btn-link p-0"
                     icon="power-off"
-                    testId="navbar-logout-mobile">
+                    testid="navbar-logout-mobile">
                     Log out
                   </AnchorLink>
                 </NavItem>

@@ -6,7 +6,7 @@ import PageLink from '../../components/PageLink';
 describe('PageLink', () => {
   it('should render without crashing', async () => {
     render(
-      <PageLink testId="page-link" href="/url">
+      <PageLink testid="page-link" href="/url">
         Text
       </PageLink>
     );

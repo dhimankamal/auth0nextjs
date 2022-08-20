@@ -6,7 +6,7 @@ import AnchorLink from '../../components/AnchorLink';
 describe('AnchorLink', () => {
   it('should render without crashing', async () => {
     render(
-      <AnchorLink testId="anchor-link" href="/url">
+      <AnchorLink testid="anchor-link" href="/url">
         Text
       </AnchorLink>
     );

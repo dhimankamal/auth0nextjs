@@ -6,7 +6,7 @@ import NavBarItem from '../../components/NavBarItem';
 describe('NavBarItem', () => {
   it('should render without crashing', async () => {
     render(
-      <NavBarItem testId="navbar-item" href="/url">
+      <NavBarItem testid="navbar-item" href="/url">
         Text
       </NavBarItem>
     );
