@@ -18,7 +18,7 @@ COPY . .
 
 # ---------------
 
-FROM node:lts-alpine
+FROM node:18
 
 ENV NODE_ENV production
 ENV API_PORT 3001
